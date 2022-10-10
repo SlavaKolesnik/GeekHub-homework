@@ -2,7 +2,7 @@
 # comma-separated numbers from user and generates a
 # list and a tuple with those numbers.
 
-numbers = input('Введіть числа через кому:',)
+numbers = input('Введіть числа через кому:\n')
 list_numbers = numbers.split(',')
 tuple_numbers = tuple(list_numbers)
 
