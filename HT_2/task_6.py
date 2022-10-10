@@ -6,9 +6,10 @@
 text = 'введіть значення:'
 print(f'{text:.^30}')
 value = str(input())
-if value in str([1, 2, 'u', 'a', 4, True, '&', '#$%']):
-    True
+my_list = [1, 2, 'u', 'a', 4, True, '&', '#$%']
+new_list = map(str, my_list)
+
+if value in new_list:
     print(value, 'є в списку')
 else:
-    False
     print(value, 'нема в списку')
