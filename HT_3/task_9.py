@@ -10,8 +10,6 @@ try:
     for number in range(n + 1):
         if number % 4 == 0 and number != 100 and number != 400:
             print(number)
-        else:
-            pass
 
 
 except (TypeError, ValueError):
