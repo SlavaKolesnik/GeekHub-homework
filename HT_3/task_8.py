@@ -3,13 +3,12 @@
 # якщо остача від ділення на 17 дорівнює 0.
 
 try:
-    sum = int(input('Enter a number: \n'))
-    n = int(input('how many cycles to do: \n'))
-    for i in range(1, n+1):
-        x = sum % 17
-        if x == 0:
-            print(sum)
-        else:
-            break
-except (TypeError, ValueError):
-    print("It's not a number")
+    n = int(input('enter the number from:\n'))
+    s = int(input('enter the number to:\n'))
+    for x in range(n, s):
+        if x % 17 == 0:
+            print(x)
+
+
+except ValueError:
+    print("enter a number")
