@@ -6,13 +6,5 @@
 
 list_tuple = [(13, 21, 32), ('Sakura', 'Pego', 'Qwerty'), (2.52, 124.456, 1234.345), ()]
 m = input('Enter something:\n')
-
-def Remove(list_tuples):
-    list_tuples = [t for t in list_tuples if t]
-    return list_tuples
-
-
-res = [tuple(list(tup[:-1])+[m]) for tup in Remove(list_tuple)]
-
-
-print(res)
+x = [tuple(list(tup[:-1]) + [m]) if tup else tup for tup in list_tuple]
+print(x)
