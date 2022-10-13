@@ -5,11 +5,14 @@
 
 
 list_tuple = [(13, 21, 32), ('Sakura', 'Pego', 'Qwerty'), (2.52, 124.456, 1234.345), ()]
+m = input('Enter something:\n')
+
 def Remove(list_tuples):
     list_tuples = [t for t in list_tuples if t]
     return list_tuples
 
-res = [t[:-1] + (100,) for t in Remove(list_tuple)]
+
+res = [tuple(list(tup[:-1])+[m]) for tup in Remove(list_tuple)]
 
 
 print(res)
