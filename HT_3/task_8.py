@@ -3,9 +3,8 @@
 # якщо остача від ділення на 17 дорівнює 0.
 
 try:
-    n = int(input('enter the number from:\n'))
-    s = int(input('enter the number to:\n'))
-    for x in range(n, s):
+    s = int(input('enter the number:\n'))
+    for x in range(0, s):
         if x % 17 == 0:
             print(x)
 
