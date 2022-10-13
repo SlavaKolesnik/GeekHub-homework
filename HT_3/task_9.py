@@ -7,15 +7,9 @@
 try:
     number = int(input('enter the year from:\n'))
     n = int(input('enter the year to:\n'))
-    for number in range(n+1):
-        if number % 4 == 0:
-            if number != 100:
-                if number != 400:
-                    print(number)
-                else:
-                    pass
-            else:
-                pass
+    for number in range(n + 1):
+        if number % 4 == 0 and number != 100 and number != 400:
+            print(number)
         else:
             pass
 
