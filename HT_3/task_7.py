@@ -6,7 +6,7 @@ try:
     number = int(input('Enter a number: \n'))
     d = dict()
 
-    for x in range(1, number + 1):
+    for x in range(number + 1):
         d[x] = x * x
 
     print(d)
