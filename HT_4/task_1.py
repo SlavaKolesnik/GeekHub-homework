@@ -4,21 +4,21 @@
 # У випадку некоректного введеного значення - виводити відповідне повідомлення.
 
 
+def season(x):
+    if 3 <= x <= 5:
+        return 'весни'
+    elif 6 <= x <= 8:
+        return 'літа'
+    elif 9 <= x <= 11:
+        return 'осені'
+    elif 1 <= x <= 12:
+        return 'зими'
+    else:
+        print('В природі всього 12 місяців!')
+        return season(int(input('Напиши від 1 до 12:\n')))
+
+
 try:
-    def season(x):
-        if x >= 3 and x <= 5:
-            return 'весни'
-        elif x >= 6 and x <= 8:
-            return 'літа'
-        elif x >= 9 and x <= 11:
-            return 'осені'
-        elif x >= 1 and x <= 12:
-            return 'зими'
-        else:
-            print('В природі всього 12 місяців!')
-            return season(int(input('Напиши від 1 до 12:\n')))
-
-
     result = season(int(input('Напишіть номер місяця:\n')))
     print('Це місяць', result)
 except ValueError:
