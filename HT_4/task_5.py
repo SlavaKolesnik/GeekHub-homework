@@ -6,34 +6,34 @@
 # Не забудьте протестувати з різними значеннями на предмет помилок!
 
 
+def calculateor():
+    while True:
+        print('Натишіть # для виходу!')
+        mat = input('Виберіть математичну дію: +,-,*,/,//,%,** ')
+        if mat in ('+', '-','*', '/', '//', '%', '**'):
+            x = float(input('Введіть х:\n'))
+            y = float(input('Введіть у:\n'))
+            if mat == '+':
+                print('Дорівнює:\n', x+y)
+            elif mat == '-':
+                print('Дорівнює:\n', x-y)
+            elif mat == '*':
+                print('Дорівнює:\n', x*y)
+            elif mat == '/':
+                print('Дорівнює:\n', x/y)
+            elif mat == '//':
+                print('Дорівнює:\n', x//y)
+            elif mat == '%':
+                print('Дорівнює:\n', x%y)
+            elif mat == '**':
+                print('Дорівнює:\n', x**y)
+        elif mat == '#':
+            break
+        else:
+            print('Це не математична дія!!!!!!!!!!!!!!!')
+
+
 try:
-    def calculateor():
-        while True:
-            print('Натишіть # для виходу!')
-            mat = input('Виберіть математичну дію: +,-,*,/,//,%,**')
-            if mat in ('+', '-','*', '/', '//', '%', '**'):
-                x = float(input('Введіть х:\n'))
-                y = float(input('Введіть у:\n'))
-                if mat == '+':
-                    print('Дорівнює:\n', x+y)
-                elif mat == '-':
-                    print('Дорівнює:\n', x-y)
-                elif mat == '*':
-                    print('Дорівнює:\n', x*y)
-                elif mat == '/':
-                    print('Дорівнює:\n', x/y)
-                elif mat == '//':
-                    print('Дорівнює:\n', x//y)
-                elif mat == '%':
-                    print('Дорівнює:\n', x%y)
-                elif mat == '**':
-                    print('Дорівнює:\n', x**y)
-            elif mat == '#':
-                break
-            else:
-                print('Це не математична дія!!!!!!!!!!!!!!!')
-
-
     calculateor()
 except ValueError:
     print('Калькулятор букви та незрозумілі символи не рахує!')
