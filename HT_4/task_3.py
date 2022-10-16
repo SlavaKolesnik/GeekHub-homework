@@ -8,16 +8,15 @@
 # x == y.      відповідь - "х дорівнює y"
 
 
+def difference(x, y):
+    if x > y:
+        print('Число ',x, 'більше за', y, 'на', x-y)
+    elif x < y:
+        print('Число ', y, 'більше за', x, 'на', y-x)
+    else:
+        print(x, 'дорівнює', y)
+
 try:
-    def difference(x, y):
-        if x > y:
-            print('Число ',x, 'більше за', y, 'на', x-y)
-        elif x < y:
-            print('Число ', y, 'більше за', x, 'на', y-x)
-        else:
-            print(x, 'дорівнює', y)
-
-
     x = int(input('Введіть число х:\n'))
     y = int(input('Введіть число у:\n'))
     difference(x,y)
