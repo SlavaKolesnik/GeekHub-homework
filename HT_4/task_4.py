@@ -13,25 +13,26 @@
 import re
 
 
-def abrakadabra(x):
-    if len(x) >=30 and len(x) <=50:
+def abrakadabra():
+    res = str(input('напишіть текст:\n'))
+    if 30 <= len(res) <= 50:
         dict = {'Літери': 0, 'Числа': 0}
-        for i in x:
+        for i in res:
             if i.isalpha():
                 dict['Літери'] += 1
             elif i.isdigit():
                 dict['Числа'] += 1
-        print(dict, 'довжина рядка:', len(x))
-    elif len(x) <= 30:
-        a = "".join([x for x in x if x.isalpha()])
+        print(dict, 'довжина рядка:', len(res))
+    elif len(res) <= 30:
+        a = "".join([x for x in res if x.isalpha()])
         print(a)
         numbers = 0
-        for elem in x:
+        for elem in res:
             if elem.isdigit():
                 numbers += int(elem)
         print("сума чисел строки:", numbers)
     else:
-        red = ''.join(sorted(set(x), key=x.index))
+        red = ''.join(sorted(set(res), key=res.index))
         string = red
         sorted_chars = sorted(string)
         sorted_string = ''.join(sorted_chars)
@@ -39,4 +40,4 @@ def abrakadabra(x):
         print(alphabet)
 
 
-res = str(abrakadabra(input()))
+abrakadabra()
