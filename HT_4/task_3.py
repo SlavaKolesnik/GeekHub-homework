@@ -21,5 +21,6 @@ try:
     y = int(input('Введіть число у:\n'))
     difference(x,y)
 
+
 except ValueError:
     print('Це не ціле число!')
