@@ -5,47 +5,32 @@
 # Таким чином ми будемо викликати одну (четверту) функцiю, а вона в своєму тiлi - ще 3.
 
 
-import random
-from termcolor import cprint
-import time
-
-
-def you_age():
-    var1 = int(input('Скільки тобі років: \n'))
-    while var1 >= 1:
-        if var1 >= 18:
-            destiny(var1)
-            return var1
-        else:
-            exit('Повертайся, коли підростеш!')
-
-
-def you_laki():
-    number = random.randint(1,6)
-    cprint('Дістаємо револьвер. Крутимо барабан!', color='blue')
-    time.sleep(2)
-    return number
-
-
-def taken_numre():
-    gues = int(input('Спробуй вгадати від 1 до 6:\n'))
-    if gues <= 6:
-        time.sleep(2)
-        return gues
+def car(model):
+    if model == 'Mustang':
+        return model
     else:
-        exit('Ти не вмієш рахувати!')
+        print("Це не твоя машина")
 
 
-def destiny(var1):
-    age = var1 + 1
-    if you_laki() == taken_numre():
-        cprint(f'{my_name}, cьогодні твій день! Зіграємо ще раз коли буде {age} років.', color='cyan')
+def speed(km):
+    if km >= 100:
+        mile = 100
+        km = mile / 0.609
+        return km
     else:
-        cprint(f'{my_name}, ти програв! Нажаль {age} років тобі вже не буде!', color='red')
+        exit('Зараз заглохнемо')
 
 
-try:
-    my_name = input('Введіть імя:\n')
-    you_age()
-except ValueError:
-    print('Це не число!')
+def gasoline(gas):
+    return gas
+
+
+def characteristics(model, km, gas):
+    if gasoline(gas) >= 10:
+        res = f'{car(model)} їде з швидкістю {speed(km)} км/год'
+        return res
+    else:
+        exit('Мало бензину')
+
+
+print(characteristics('Mustang',100, 50))
