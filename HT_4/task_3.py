@@ -16,6 +16,7 @@ def difference(x, y):
     else:
         print(x, 'дорівнює', y)
 
+        
 try:
     x = int(input('Введіть число х:\n'))
     y = int(input('Введіть число у:\n'))
