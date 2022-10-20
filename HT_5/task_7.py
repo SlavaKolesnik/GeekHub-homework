@@ -5,16 +5,18 @@
 #     1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2] ----> "1 -> 3, foo -> 2, [1, 2] -> 2, True -> 1"
 
 
-def dublikate():
-    new_list = list(map(str, list_1))
-    df = dict()
-    for x in new_list:
-        if x not in df:
-            df[x] = df.get(x, 0)
-        df[x] += 1
-    for key in df.keys():
-        print('Вираз: "', key,'" повторюється', df[key], 'раз')
+def dublikate(lst):
+    lst_1 = list(zip(lst, map(type, lst)))
+    lst_2 = []
+    lst_3 = []
+    for x in lst_1:
+        if x in lst_2:
+            pass
+        else:
+            lst_2.append(x)
+            lst_3.append(f'{x[0]} повторюється раз: {lst_1.count(x)} ')
+    print('\n'.join(lst_3))
 
 
-list_1 = [1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2]]
-dublikate()
+lst = [1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2]]
+dublikate(lst)
