@@ -3,18 +3,13 @@
 # True, якщо це число просте і False - якщо ні.
 
 
-def is_prime():
-    x = float(input('Введіть від 0 до 1000:\n'))
-    if x <= 1000:
-        if x % 1 == 0:
-            return True
-        else:
+
+def is_prime(a):
+    if a < 2:
+        return False
+    for i in range(2, int(a ** 0.5 + 1)):
+        if a % i == 0:
             return False
-    print('Число не в діапазоні від 0 до 1000!')
-    return is_prime()
-
-
-try:
-    print(is_prime())
-except ValueError:
-    print('Це не число!')
+    else:
+        return True
+print(is_prime(2))
