@@ -7,18 +7,13 @@
 # (але округлену до копійок).
 
 
-def bank():
-    money = float(input('Введіть суму яку хочете покласти на депозит:\n'))
-    years = int(input('На скільки років:\n'))
-    percent = int(input('Під відсоток (від 1 до 10):\n'))
+def bank(money, years, percent=10):
     if percent <= 10:
         return money + (money / 100 * percent * years)
     else:
         print('Не можна більше 10%!')
         return bank()
 
+    
+print(bank(1000, 10))
 
-try:
-    print('Ваш дохід становитиме:', round(bank(), 2),'грн')
-except ValueError:
-    print('Це не числа!')
