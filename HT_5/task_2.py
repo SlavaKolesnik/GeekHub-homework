@@ -8,12 +8,9 @@
 
 
 def bank(money, years, percent=10):
-    if percent <= 10:
-        return money + (money / 100 * percent * years)
-    else:
-        print('Не можна більше 10%!')
-        return bank()
+    for x in range(years):
+        money += money * percent/100
+    print(round(money, 2))
 
-    
-print(bank(1000, 10))
 
+bank(100, 2)
