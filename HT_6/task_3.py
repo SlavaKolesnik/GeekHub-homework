@@ -13,7 +13,6 @@
 #    P.S. Не забудьте використати блок try/except ;)
 
 
-
 class LenPass(Exception):
     pass
 
@@ -56,14 +55,14 @@ for user in log_pass:
     status = "OK"
     try:
         logpass(user[0], user[1])
-    except LenLog:
-        status = "ім'я повинно бути не меншим за 3 символа і не більшим за 50"
-    except LenPass:
-        status = 'пароль повинен бути не меншим за 8 символів'
-    except Islower:
-        status = 'Пароль має бути з великої літери'
-    except Num:
-        status = 'пароль повинен мати хоча б одну  цифру'
+    except LenLog as error:
+        status = error
+    except LenPass as error:
+        status = error
+    except Islower as error:
+        status = error
+    except Num as error:
+        status = error
     finally:
         print(f'Name: {user[0]}')
         print(f'Password: {user[1]}')
