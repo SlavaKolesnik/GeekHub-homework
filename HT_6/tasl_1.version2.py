@@ -12,6 +12,7 @@
 class LoginException(Exception):
     pass
 
+
 def authorization(users, password, silent=False):
 
 
@@ -21,9 +22,9 @@ def authorization(users, password, silent=False):
 
 
     try:
-        for user in users_pass:
-            if users == user[0] and password == user[1]:
-                return True
+
+        if [users, password] in users_pass:
+            return True
         raise LoginException('Невірний логін чи пароль')
     except LoginException as err:
         if silent:
