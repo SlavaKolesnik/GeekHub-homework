@@ -55,14 +55,9 @@ for user in log_pass:
     status = "OK"
     try:
         logpass(user[0], user[1])
-    except LenLog as error:
+    except (LenLog, LenPass, Islower, Num) as error:
         status = error
-    except LenPass as error:
-        status = error
-    except Islower as error:
-        status = error
-    except Num as error:
-        status = error
+
     finally:
         print(f'Name: {user[0]}')
         print(f'Password: {user[1]}')
