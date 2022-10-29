@@ -11,11 +11,16 @@
 #     "aA11" -> 2             # 'a' і '1'
 #     "ABBA" -> 2             # 'A' і 'B' кожна двічі
 
-from collections import Counter
+
+def amount_str(lst):
+    amount = set([x for x in lst.lower() if lst.lower().count(x) > 1])
+    return len(amount)
 
 
-s = 'afkkakf223kka'
-d = dict(Counter(s))
-
-
-print({k: v for k, v in d.items() if v > 1})
+print(amount_str('abcde'))
+print(amount_str('aabbcde'))
+print(amount_str('aabBcde'))
+print(amount_str('indivisibility'))
+print(amount_str('Indivisibilities'))
+print(amount_str('aA11'))
+print(amount_str('ABBA'))
