@@ -11,14 +11,21 @@
 #    P.P.P.S Не забудьте обробляти невалідні ситуації (типу range(1, -10, 5) тощо). Подивіться як веде себе стандартний range в таких випадках.
 
 
-def frange(start, stop, step=2):
+def my_range(start, stop, step=3):
     i = start
+    if step <= 0 or stop <= 0:
+        print('менше нуля')
+        return ValueError
     while i < stop:
         yield i
         i += step
-    return(i for i in range(1, 20))
 
 
-print(list(frange(10, 20)))
-print(list(frange(-10, 20)))
-print(list(frange(10, -20)))
+for x in my_range(1, 10, 2):
+    print(x)
+for y in my_range(1, -10, 5):
+    print(y)
+for k in my_range(-1, -10, -3):
+    print(k)
+for j in my_range(1, 15):
+    print(j)
